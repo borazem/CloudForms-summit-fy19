@@ -1,0 +1,12 @@
+---
+- name: Create a directory on a Linux machine
+  hosts: local
+  vars:
+  - folder_name: /bo-test
+
+  tasks:
+    - name: Ensure {{ folder_name }} directory exists
+      file:
+        path: {{ folder_name }}
+        state: directory
+        mode: '0755'
